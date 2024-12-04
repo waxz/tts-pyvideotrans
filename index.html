@@ -8,15 +8,54 @@
   <title>语音合成-文字转语音-srt字幕转语音-tts.pyvideotrans.com</title>
   <link href="/output.css" rel="stylesheet">
   <script src="/vue.js"></script>
+
 	
+	
+	<style>
+	#layui-nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    overflow: auto;
+    white-space: nowrap;
+    background: #eee;
+}
+.layui-nav .layui-nav-item {
+    position: relative;
+    display: inline-block;
+    margin-top: 0;
+    list-style: none;
+    vertical-align: middle;
+    line-height: 60px;
+}
+.layui-nav .layui-nav-item a {
+    color: #333;
+}
+.layui-nav .layui-nav-item a {
+    display: block;
+    padding: 0 20px;
+    color: #333;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+.layui-nav .layui-nav-item a:hover, .layui-nav .layui-this a {
+    color: #009688;
+    text-decoration: none;
+}
+		#app{margin-top:50px}
+	</style>
 </head>
 <body class="bg-gray-100 font-sans">
-
+	<ul id="layui-nav" class="layui-nav">
+        <li class="layui-nav-item"><a href="https://pyvideotrans.com">文档主站</a></li>
+        <li class="layui-nav-item "><a href="https://srt.pyvideotrans.com" target="_blank">字幕翻译</a></li>
+        <li class="layui-nav-item"><a href="https://stt.pyvideotrans.com" target="_blank">视频工具箱</a></li>
+	<li class="layui-nav-item layui-this"><a href="https://tts.pyvideotrans.com">语音合成</a></li>
+    <span class="layui-nav-bar" style="left: 0px; top: 57px; width: 0px; opacity: 0;"></span></ul>
 <div class="container mx-auto p-4 md:p-8" id="app">
   <h1 class="text-3xl font-bold mb-2 text-center text-gray-800">文字合成语音/SRT字幕转语音</h1>
-  <div class="text-center mb-6 mt-1 text-xs text-gray-500"><a href="https://pyvideotrans.com">by pyvideotrans.com</a>
-  <a class="px-3" href="https://srt.pyvideotrans.com">在线srt字幕翻译</a>
-  </div>
 
   <div class="bg-white rounded-lg shadow-md p-6 mb-6">
       <div class="mb-4">
