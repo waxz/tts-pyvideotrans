@@ -1,0 +1,6 @@
+name ="openai-edge-tts"
+compatibility_date = "2025-06-08"
+main = "src/index.ts"
+
+[assets]
+directory = "./dist"
