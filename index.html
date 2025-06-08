@@ -415,25 +415,13 @@
         "nl": "Hallo mijn lieve vriend, ik hoop dat elke dag goed en fijn voor je is!!",
         "sv": "Hej min kära vän, jag hoppas att varje dag är en bra och trevlig dag för dig!",		
 		}, 
-        language_role: {  "zh": [
-    
-    "zh-HK-HiuGaaiNeural",
-    "zh-HK-HiuMaanNeural",
-    "zh-HK-WanLungNeural",
-    "zh-CN-XiaoxiaoNeural",
-    "zh-CN-XiaoyiNeural",
-    "zh-CN-YunjianNeural",
-    "zh-CN-YunxiNeural",
-    "zh-CN-YunxiaNeural",
-    "zh-CN-YunyangNeural",
-    "zh-CN-liaoning-XiaobeiNeural",
-    "zh-TW-HsiaoChenNeural",
-    "zh-TW-YunJheNeural",
-    "zh-TW-HsiaoYuNeural",
-    "zh-CN-shaanxi-XiaoniNeural"
-  ],
+        language_role: {  
   "en": [
-    
+        "en-GB-LibbyNeural",
+    "en-GB-MaisieNeural",
+    "en-GB-RyanNeural",
+    "en-GB-SoniaNeural",
+    "en-GB-ThomasNeural",
     "en-AU-NatashaNeural",
     "en-AU-WilliamNeural",
     "en-CA-ClaraNeural",
@@ -459,11 +447,7 @@
     "en-ZA-LukeNeural",
     "en-TZ-ElimuNeural",
     "en-TZ-ImaniNeural",
-    "en-GB-LibbyNeural",
-    "en-GB-MaisieNeural",
-    "en-GB-RyanNeural",
-    "en-GB-SoniaNeural",
-    "en-GB-ThomasNeural",
+
     "en-US-AvaMultilingualNeural",
     "en-US-AndrewMultilingualNeural",
     "en-US-EmmaMultilingualNeural",
@@ -481,6 +465,23 @@
     "en-US-MichelleNeural",
     "en-US-RogerNeural",
     "en-US-SteffanNeural"
+  ],
+		"zh": [
+    
+    "zh-HK-HiuGaaiNeural",
+    "zh-HK-HiuMaanNeural",
+    "zh-HK-WanLungNeural",
+    "zh-CN-XiaoxiaoNeural",
+    "zh-CN-XiaoyiNeural",
+    "zh-CN-YunjianNeural",
+    "zh-CN-YunxiNeural",
+    "zh-CN-YunxiaNeural",
+    "zh-CN-YunyangNeural",
+    "zh-CN-liaoning-XiaobeiNeural",
+    "zh-TW-HsiaoChenNeural",
+    "zh-TW-YunJheNeural",
+    "zh-TW-HsiaoYuNeural",
+    "zh-CN-shaanxi-XiaoniNeural"
   ],
 	"ja": [
     
@@ -812,7 +813,7 @@
 		},
  async generateSpeech(listener_text) {
  console.log(listener_text)
-        const workerUrl = 'https://ttsapi.pyvideotrans.com/v1/audio/speech';
+	const workerUrl = `${window.location.origin}/v1/audio/speech`;
         const parsedText = typeof listener_text==='string'?listener_text:this.parseText();
 		if(!this.selectedVoice || this.selectedVoice=='No'){
 			
