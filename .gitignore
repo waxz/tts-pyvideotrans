@@ -1,0 +1,10 @@
+node_modules
+dist
+.cache
+.parcel-cache
+.DS_Store
+.wrangler
+*rust/target*
+yarn.lock
+wasi-test-rust/Cargo.lock
+/target
