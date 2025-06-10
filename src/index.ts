@@ -13,6 +13,8 @@ let tokenInfo = {
     expiredAt: null
 };
 
+ 
+
 addEventListener("fetch", event => {
     event.respondWith(handleRequest(event.request));
 });
@@ -139,21 +141,21 @@ async function handleOptions(request) {
 }
 
 function splitAndMerge(str, chunkSize, determin) {
-    const words = str.split(determin);
-    const result = [];
-    let currentChunk = [];
+    const sentences = str.split(determin);
+    const result:Array<string> = [];
+    let currentChunk:Array<string> = [];
     let currentLength = 0;
 
-    for (const word of words) {
-        if (currentLength + word.length + (currentChunk.length > 0 ? 1 : 0) <= chunkSize) {
-            currentChunk.push(word);
-            currentLength += word.length + (currentChunk.length > 1 ? 1 : 0);
+    for (const sentence of sentences) {
+        if (currentLength + sentence.length + (currentChunk.length > 0 ? 1 : 0) <= chunkSize) {
+            currentChunk.push(sentence);
+            currentLength += sentence.length + (currentChunk.length > 1 ? 1 : 0);
         } else {
             if (currentChunk.length > 0) {
                 result.push(currentChunk.join(' '));
             }
-            currentChunk = [word];
-            currentLength = word.length;
+            currentChunk = [sentence];
+            currentLength = sentence.length;
         }
     }
 
@@ -172,7 +174,7 @@ async function getVoice(getAudio, text, voiceName = "zh-CN-XiaoxiaoNeural", rate
 
         // 获取每个分段的音频
         //const audioChunks = await Promise.all(chunks.map(chunk => getAudioChunk(chunk, voiceName, rate, pitch, volume,style, outputFormat)));
-        let audioChunks = []
+        let audioChunks:Array<Blob> = []
         while (chunks.length > 0) {
             try {
                 let audio_chunk = await getAudio(chunks.shift(), voiceName, rate, pitch, volume, style, outputFormat)
